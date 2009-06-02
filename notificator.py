@@ -6,6 +6,7 @@ from twisted.application import service
 from wokkel.xmppim import MessageProtocol, AvailablePresence
 from wokkel.client import XMPPClient
 from twisted.scripts import twistd
+from keepalive import KeepAlive
 import pynotify
 
 # Settings
@@ -31,5 +32,6 @@ if __name__ == '__main__':
     xmppclient = XMPPClient(jid.internJID(username + "@" + domain + "/notificator"), password)
     mynotificator = NotificationProtocol()
     mynotificator.setHandlerParent(xmppclient)
+    KeepAlive().setHandlerParent(xmppclient)
     xmppclient.startService()
     reactor.run()
