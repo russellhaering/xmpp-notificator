@@ -1,0 +1,15 @@
+"""
+Settings for the Network Notification Daemon
+"""
+
+# A Jabber Login - A Gmail Account Works
+login = 'user@gmail.com'
+
+# Password for Above Login
+password = 'god'
+
+# An Identifier For this Device
+host = 'workstation'
+
+# An Output Plugin (Not Implemented Yet)
+output = 'TextNotificationOutput'
